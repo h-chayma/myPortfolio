@@ -1,0 +1,13 @@
+.blog-slider-single {
+    padding: 0;
+}
+
+.blog-slider-single:hover img {
+    transform: none;
+}
+
+.blog-slider-single .img img {
+    width: 352px;
+    height: 208px;
+    object-fit: cover;
+}

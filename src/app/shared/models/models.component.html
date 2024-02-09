@@ -1,0 +1,61 @@
+<div class="modal portfolio-modal-box fade" *ngFor="let card of cardDetailsList; let i = index" id="portfolio-{{i + 1}}"
+    tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-bs-dismiss="modal">
+                    <i class="far fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h6 class="blog-title">
+                    {{card.title}}
+                </h6>
+                <div class="portfolio-modal-table">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="portfolio-modal-table-text">
+                                <i class="fa-regular fa-file-lines"></i>
+                                Project : <span>{{card.type}}</span>
+                            </h3>
+                        </div>
+                        <div class="col-md-12">
+                            <h3 class="portfolio-modal-table-text">
+                                <i class="fa-solid fa-code"></i>
+                                Langages : <span>{{card.languages.join(', ')}}</span>
+                            </h3>
+                        </div>
+                        <div class="col-md-12">
+                            <h3 class="portfolio-modal-table-text">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                Preview : <a [href]="card.preview">{{card.preview}}</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="h1-modal-paragraph">
+                    <p>{{card.description}}</p>
+                </div>
+                <div class="col-12">
+                    <div class="blog-slider-wrap">
+                        <div class="swiper-container blog-slider-active">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6" *ngFor="let image of card.images">
+                                            <div class="blog-slider-single bg-prink">
+                                                <a href="{{image}}" class="img" target="_blank">
+                                                    <img [src]="image" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

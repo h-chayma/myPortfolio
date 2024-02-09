@@ -1,0 +1,9 @@
+.bostami-header-logo .site-logo img {
+    width: 200px;
+}
+
+@media (max-width: 768px) {
+    .bostami-header-logo .site-logo img {
+        width: 100px;
+    }
+}
