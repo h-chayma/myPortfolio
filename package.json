@@ -20,6 +20,7 @@
     "@angular/router": "^17.0.0",
     "@types/isotope-layout": "^3.0.12",
     "@types/jquery.appear": "^1.0.4",
+    "ngx-google-analytics": "^14.0.1",
     "ngx-owl-carousel-o": "^17.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
