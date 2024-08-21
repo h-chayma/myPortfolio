@@ -28,9 +28,16 @@
                         <div class="col-md-12">
                             <h3 class="portfolio-modal-table-text">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                Preview : <a [href]="card.preview">{{card.preview}}</a>
+                                Preview :
+                                <ng-container *ngIf="card.preview !== 'Not available'; else noPreview">
+                                    <a [href]="card.preview" target="_blank" class="available-link">{{card.preview}}</a>
+                                </ng-container>
+                                <ng-template #noPreview>
+                                    <span class="not-available">{{card.preview}}</span>
+                                </ng-template>
                             </h3>
                         </div>
+
                     </div>
                 </div>
                 <div class="h1-modal-paragraph">
@@ -43,7 +50,7 @@
                                 <div class="swiper-slide">
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6" *ngFor="let image of card.images">
-                                            <div class="blog-slider-single bg-prink">
+                                            <div class="blog-slider-single">
                                                 <a href="{{image}}" class="img" target="_blank">
                                                     <img [src]="image" alt="">
                                                 </a>
