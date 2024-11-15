@@ -13,6 +13,7 @@ import { ModelsComponent } from './shared/models/models.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomeComponent } from './home/home.component';
     WorksComponent,
     ContactComponent,
     FooterComponent,
-    ModelsComponent
+    ModelsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
