@@ -1,25 +1,25 @@
 <div class="bostami-header-area mb-30 z-index-5">
     <div class="container">
         <div class="bostami-header-wrap main-style-2">
-            <div class="row">
-                <div class="col-lg-2 col-md-6 col-sm-4 col-4 d-flex align-items-center">
+            <div class="row align-items-center">
+                <div class="col-lg-2 col-md-6 col-sm-4 col-4">
                     <div class="bostami-header-logo">
-                        <a class="site-logo" routerLink="">
-                            <img src="assets/img/profile/Chayma.png" alt="">
+                        <a class="site-logo" routerLink="" aria-label="Home">
+                            <img src="assets/img/profile/Chayma.png" alt="Site Logo">
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-6 col-sm-8 col-8">
                     <div class="header-right-flex">
-                        <div class="bostami-main-menu-wrap ">
+                        <div class="bostami-main-menu-wrap">
                             <nav class="bastami-main-menu main_menu_2">
                                 <ul>
-                                    <li routerLinkActive="active">
+                                    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                                         <a routerLink="">
                                             <span>
                                                 <i class="fa-light fa-house"></i>
                                             </span>
-                                            home
+                                            Home
                                         </a>
                                     </li>
                                     <li routerLinkActive="active">
@@ -27,7 +27,7 @@
                                             <span>
                                                 <i class="fa-light fa-address-card"></i>
                                             </span>
-                                            about
+                                            About
                                         </a>
                                     </li>
                                     <li routerLinkActive="active">
@@ -51,23 +51,23 @@
                                             <span>
                                                 <i class="fa-light fa-address-book"></i>
                                             </span>
-                                            contact
+                                            Contact
                                         </a>
                                     </li>
                                 </ul>
                             </nav>
                         </div>
                         <div class="bostami-header-menu-btn text-right ml-30">
-                            <div class="dark-btn dark-btn-2">
+                            <div class="dark-btn dark-btn-2" aria-label="Toggle Dark Mode">
                                 <i class="fa-light fa-moon dark-btn-icon"></i>
                                 <i class="fa-light fa-sun dark-btn-icon"></i>
                             </div>
                             <div class="menu-btn-wrap d-lg-none">
-                                <div class="menu-btn menu-btn-2 toggle_menu">
+                                <button class="menu-btn menu-btn-2 toggle_menu" aria-label="Toggle Mobile Menu">
                                     <span></span>
                                     <span></span>
                                     <span></span>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -75,8 +75,15 @@
             </div>
         </div>
         <div class="mobile-menu-wrap">
-            <div class="mobile-menu mobile_menu_2">
-            </div>
+            <div class="mobile-menu mobile_menu_2"></div>
         </div>
+    </div>
+
+    <div *ngIf="showAlert" class="global-alert bg-warning text-dark text-center p-2 d-flex justify-content-between align-items-center">
+        <div>
+            <strong>Notice:</strong> This portfolio is outdated. Visit my new portfolio:
+            <a href="https://chaymafarhat.vercel.app" class="text-primary font-weight-bold">New Portfolio</a>
+        </div>
+        <button class="btn-close text-dark" (click)="dismissAlert()" aria-label="Close"></button>
     </div>
 </div>

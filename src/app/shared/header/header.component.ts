@@ -5,10 +5,16 @@ import { AfterViewInit, Component } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent implements AfterViewInit{
+export class HeaderComponent implements AfterViewInit {
+  showAlert: boolean = true;
+
   ngAfterViewInit(): void {
     this.initMeanMenu();
     this.initMobileMenu();
+  }
+
+  dismissAlert(): void {
+    this.showAlert = false;
   }
 
   private initMeanMenu(): void {
@@ -31,7 +37,7 @@ export class HeaderComponent implements AfterViewInit{
   private initMobileMenu(): void {
     const menutoggole = document.querySelector(".toggle_menu");
     const mobilemenu = document.querySelector(".mobile-menu");
-  
+
     if (menutoggole && mobilemenu) {
       menutoggole.addEventListener("click", () => {
         menutoggole.classList.toggle("active");
@@ -39,5 +45,5 @@ export class HeaderComponent implements AfterViewInit{
       });
     }
   }
-  
+
 }
